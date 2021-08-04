@@ -1,0 +1,112 @@
+.navbar .megamenu{ padding: 1rem; }
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+  .navbar{
+    padding: 0 0 !important;
+  }
+  .navbar .has-megamenu{position:static!important;}
+  .navbar .megamenu{left:0; right:0; width: 60%; margin-top:0; }
+  .logo{     padding: 5px 25px !important;}
+  #city-link{
+    font-size: 20px;
+    background-color: white;
+    color: grey;
+    padding-left: 15px;
+    padding-right: 12px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  #know-more{     color: black;
+    padding: 2px 18px;
+    margin: 0 25px;
+    border-radius: 130px;
+    border: none;
+    font-size: large;
+}
+
+    .city-drop-link-group{
+      webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 5;
+    }
+    .dropdown-menu{
+      width: 60%;
+      border: 1px solid rgba(0,0,0,.15);
+      padding: 51px 0 !important;
+    margin: 0 80px !important;
+     border-end-start-radius: 10px !important;
+     border-end-end-radius: 10px !important;
+   
+    }
+    .all{
+      width: 100%;
+    }
+    .city-drop-link-group li {
+      list-style: none;
+      text-decoration: none;
+    }
+    .city-drop-link-group li a {
+      list-style: none;
+      text-decoration: none;
+      color: black;
+    }
+    .city-drop-link-group li a:hover {
+      list-style: none;
+      color: #0d6efd;
+    }
+
+}	
+/* ============ desktop view .end// ============ */
+
+/* ============ mobile view ============ */
+@media(max-width: 991px){
+  .navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
+    overflow-y: auto;
+      max-height: 90vh;
+      margin-top:10px;
+  }
+  #know-more{     color: black;
+    /* padding: 10px 63px;
+    margin: 0 0; */
+    border-radius: 130px;
+    border: none;
+    padding: 2px 18px;
+    margin: 0 25px;
+
+    font-size: large;}
+
+    #city-link{
+      font-size: 27px;
+      margin-left: 20px;
+    }
+    .city-drop-link-group{
+      webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    }
+    .city-drop-link-group li {
+      list-style: none;
+      text-decoration: none;
+    }
+    .city-drop-link-group li a {
+      list-style: none;
+      text-decoration: none;
+      color: black;
+    }
+    .city-drop-link-group li a:hover {
+      list-style: none;
+      color: #0d6efd;
+    }
+  .logo{     padding: 0px 25px !important;}
+
+}
+
+@media(max-width: 450px){
+  .city-drop-link-group{
+    webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 2;
+  }
+}

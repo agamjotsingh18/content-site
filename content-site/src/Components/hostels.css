@@ -1,0 +1,33 @@
+.hostels{
+    margin-top: 23px;
+    /* width: 80%; */
+    display: flex;
+    justify-content: center;
+}
+
+.hostels-image{
+    height: 300px;
+    width: 400px;
+}
+
+.content{
+    padding: 43px;
+}
+
+a#register{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+@media(max-width: 991px){
+    .hostels-image{
+        height: 193px;
+        width: 243px;
+    }
+    .content{
+        padding: 25px 0;
+    }
+
+}

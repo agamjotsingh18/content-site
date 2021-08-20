@@ -44,6 +44,11 @@ Enter the Price Range:
 </span>
 &nbsp;&nbsp;
 <input type="number" name="price_range" /><br />
+<span>
+Enter the Hostel Features:
+</span>
+&nbsp;&nbsp;
+<input type="text" name="hostel_feature" /><br />
 <br></br>
 <input type="submit" value="Submit" name="submit" id="submit" />
 </form>

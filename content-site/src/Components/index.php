@@ -1,3 +1,20 @@
+
+<?php
+session_start();
+
+// if(isset($_SESSION['username'])){
+//   // $_SESSION['msg']= "Go! mand Login first";
+//   header("location: login.php");
+
+// }
+
+if(isset($_GET['logout'])){
+  session_destroy();
+  // unset($_SESSION['username']);
+  header("location: .php");
+}
+?>
+
 <head>
 <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -5,6 +22,8 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css">
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+<link href="bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
 
 <!-- <link rel="stylesheet" href="mega-menu.css"> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/5.0.2/jquery.min.js"></script>
@@ -101,6 +120,11 @@ if (window.innerWidth > 992) {
   </script>
 </head>
 <style>
+  #aknow{
+    text-decoration:none;
+    list-style: none;
+    color:black;
+  }
   .navbar{
     margin-bottom: 0px !important;
   }
@@ -241,6 +265,8 @@ border-color: #000000;
   }
   #know-more{
     float:none o !important;
+    list-style: none;
+
   }
   .nav-link{
     display: flex !important;
@@ -260,12 +286,15 @@ border-color: #000000;
   #carett{
     margin-top: 6px !important;
     margin-left: 5px !important;
-  }
+   }
   #selectives{
     background-color: white;
     border-radius: 24px;
     margin: 5px;
-}
+   }
+   #sort{
+    margin: 2px -110px 0 !important;
+   }
   }
  
 
@@ -297,16 +326,20 @@ border-color: #000000;
 
   }
   
-  #know-more{        font-size: 24px;
+  #know-more{     
+    display: inline-flex;
+    font-size: 20px;
     background-color: white;
     color: black;
-    margin: 8px 36px 0 0px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 107px;
+    margin: 10px 36px 0 31px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
     float: right;
+    list-style: none;
+
 }
 
     .city-drop-link-group{
@@ -362,15 +395,19 @@ border-color: #000000;
       max-height: 90vh;
       margin-top:10px;
   }
-  #know-more{         font-size: 24px;
+  #know-more{     
+    display: inline-flex;
+    font-size: 20px;
     background-color: white;
     color: black;
-    margin: 8px 36px 0 0px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 107px;}
+    margin: 10px 36px 0 31px;    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    list-style: none;
+
+  }
 
     #city-link{
       /* font-size: 25px;
@@ -434,6 +471,7 @@ border-color: #000000;
 }	
 
         </style>
+      
 <div class="navbar navbar-default navbar-static-top" style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
   <div class="container">
     <div class="navbar-header">
@@ -627,12 +665,61 @@ border-color: #000000;
 </ul> -->
 </li>
 </ul>
-<li className="nav-item" ><button className="nav-link" id="know-more" href="#"> Know More </button></li>
+<li className="nav-item" id="know-more" >
+  <a className="nav-link" id="aknow" href="login.php"> Login</a>
+  <span>&nbsp;|&nbsp;</span>
+  <a className="nav-link" id="aknow" href="register.php"> Sign Up </a>
+</li>
     </div>
   </div>
 </div>
 
 
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-secondary text-dark">
+ <div class="container-fluid">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="main_nav">
+	<ul class="navbar-nav">
+		<li class="nav-item active"> <a class="nav-link" href="#">Home </a> </li>
+	
+		<li class="nav-item dropdown">
+		   <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">  Hover me  </a>
+		    <ul class="dropdown-menu">
+			  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+			  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+			  <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
+		    </ul>
+		</li>
+		<li class="nav-item dropdown">
+		   <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">  Hover me  </a>
+		    <ul class="dropdown-menu">
+			  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+			  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+			  <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
+		    </ul>
+		</li>
+		<li class="nav-item dropdown">
+		   <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">  Hover me  </a>
+		    <ul class="dropdown-menu">
+			  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+			  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+			  <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
+		    </ul>
+		</li>
+		<li class="nav-item dropdown">
+		   <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">  Hover me  </a>
+		    <ul class="dropdown-menu">
+			  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+			  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+			  <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
+		    </ul>
+		</li>
+	</ul>
+  </div> 
+ </div> 
+</nav> -->
 <div class="navbar" style=" margin-left:10px;
     margin-right: 10px;">
 	    	<div class="container-fluid">
@@ -696,7 +783,7 @@ border-color: #000000;
         <a style="color:black;" class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sort<span class="caret" id="carett"></span>
         </a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu" id="sort">
     <li><a href="#">Action</a></li>
     <li><a href="#">Another action</a></li>
     <li><a href="#">Something else here</a></li>
@@ -706,24 +793,42 @@ border-color: #000000;
 				    </ul>
 				
 	    		</div>
-          <button><a href="index.php?logout='1'"></a></button>
-	<!-- </div> -->
+          <?php if(isset($_SESSION['success'])) : ?>
+              <div class="error success">
+                <h3>
+                  <?php
+                  echo $_SESSION['success'];
+                  unset($_SESSION['success']);
+                  ?>
+                  </h3>
+            </div>
+            
+            <?php endif ?>
+            <?php if(isset($_SESSION['username'])): ?>
+              <h3>Welcome <strong><?php echo $_SESSION['username']; ?></strong></h3>
+              <button>
+                <a href="index.php?logout='1'">Logout</a>
+            </button>
+            <?php endif ?>
+         
+            <!-- <script src="//code.jquery.com/jquery.min.js"></script>
+2
+<script src="js/main.js"></script> -->
 
+	<!-- </div> -->
+<script>
+//         $(document).ready(function() {
+//   jQuery(document).ready(function(){
+//     $(".dropdown").hover(
+//       function() { $('.dropdown-menu', this).stop().fadeIn("fast");
+//         },
+//       function() { $('.dropdown-menu', this).stop().fadeOut("fast");
+//     });
+//   });
+// }
+        </script>
 <?php
 
-session_start();
-
-// if(isset($_SESSION['username'])){
-//   $_SESSION['msg']= "Go! mand Login first";
-//   header("location: login.php");
-
-// }
-
-// if(isset($_GET['logout'])){
-//   session_destroy();
-//   unset($_SESSION['username']);
-//   header("location: login.php")
-// }
 
 
 $db = mysqli_connect("localhost", "root", "", "hostels");
@@ -743,11 +848,12 @@ if (isset($_POST['submit'])) {
         $phone_number = mysqli_real_escape_string($db, $_POST['phone_number']);
         $price_range = mysqli_real_escape_string($db, $_POST['price_range']);
         $hostel_feature = mysqli_real_escape_string($db, $_POST['hostel_feature']);
+        $hostel_description = mysqli_real_escape_string($db, $_POST['hostel_description']);
 
         // image file directory
         $target = "images/".basename($image);
 
-        $sql = "INSERT INTO hostel (hostel_image, hostel_name, hostel_city, hostel_address, owner_name, phone_number, price_range, hostel_feature ) VALUES ('$image', '$hostel_name', '$hostel_city', '$hostel_address', '$owner_name', '$phone_number', '$price_range', '$hostel_feature')";
+        $sql = "INSERT INTO hostel (hostel_image, hostel_name, hostel_city, hostel_address, owner_name, phone_number, price_range, hostel_feature, hostel_description ) VALUES ('$image', '$hostel_name', '$hostel_city', '$hostel_address', '$owner_name', '$phone_number', '$price_range', '$hostel_feature', '$hostel_description')";
         // execute query
         mysqli_query($db, $sql);
 
@@ -764,95 +870,126 @@ if(isset($_GET["hostel_city"])){
         $hostel_city = $_GET['hostel_city'];
         $result = mysqli_query($db, "SELECT * FROM hostel where hostel_city = '".$hostel_city."'");
       }
+        
+   
       $content="content";
+      $contentt="contentt";
+      $myModal="myModal";
+      $modal_content="modal_content";
       $parts="parts";
+      $Featured="Featured";
       $con= "con";
       $co="co";
-      $cl="cl";
-      $cr="cr";
-      $Featured="Featured";
-      $Ratings="Ratings";
       $Rs="Rs.";
+      $Ratings="Ratings";
       $price="price";
       $Contact="Contact: ";
-
-      // $rating_round = round($rating * 2) / 2;
-
-      
+      $close="close";
+      $Description="Description";
+    $cl="cl";
+    $cr="cr";
       while ($row = mysqli_fetch_array($result)) {
-              echo "<div id=$content >";
-              echo "<img id=$parts src='images/".$row['hostel_image']."' >";
+        echo "<div id=$content >";
+        // echo "<span id="$close">";
+        // echo "&times;";
+        // echo "</span>";
+
+        echo "<img id=$parts class='image' src='images/".$row['hostel_image']."' >";
+        echo "<div id=$con >";
+        echo "<div id=$co >";
+      echo "<div id=$cl >";
+      echo "<h4 id=$parts >".$row['hostel_name']."</h4>";
+      echo "<p id=$parts>".$row['hostel_city']."</p>";
+      echo "<p id=$parts>".$row['hostel_address']."</p>";
+      echo "<h5 id=$parts >$Featured</h5>";
+      echo "<p id=$parts>".$row['hostel_feature']."</p>";
+      echo "</div>";
+      echo "<div id=$cr >";
+      echo "<h4 id=$parts >$Ratings</h4>";
+      echo '<i class="fa fa-star" style="
+      padding: 5px;
+      "></i><i class="fa fa-star" style="
+      padding: 5px;
+      "></i><i class="fa fa-star" style="
+      padding: 5px;
+      "></i><i class="fa fa-star" style="
+      padding: 5px;
+      "></i><i class="fa fa-star" style="
+      padding: 5px;
+      "></i>';
+      echo "<br/>";
+      
+      echo "<div id=$price>";
+      echo "<span>$Rs</span>";
+      echo "<span>".$row['price_range']."</span>";
+      echo "</div >";
+      
+      echo "<h4 id=$parts >$Contact</h4>";
+      
+      echo "<p id=$parts>".$row['phone_number']."</p>";
+      echo "<p id=$parts>".$row['owner_name']."</p>";
+      echo "</div>";
+      echo "</div>";
+      echo "</div>";
+      echo "</div>";
+
+
+        echo "<div class='modal fade' id=$myModal role='dialog' >";
+        echo "<div class='modal-dialog'>";
+        echo "<div id=$modal_content >";
+              echo "<div id=$contentt >";
+              // echo "<span id="$close">";
+              // echo "&times;";
+              // echo "</span>";
+
+              echo "<img id=$parts class='image' src='images/".$row['hostel_image']."' >";
               echo "<div id=$con >";
               echo "<div id=$co >";
-              echo "<div id=$cl >";
-              echo "<h4 id=$parts >".$row['hostel_name']."</h4>";
-              echo "<p id=$parts>".$row['hostel_city']."</p>";
-              echo "<p id=$parts>".$row['hostel_address']."</p>";
-              
-              echo "<h5 id=$parts >$Featured</h5>";
-              echo "<p id=$parts>".$row['hostel_feature']."</p>";
-              echo "</div>";
-              echo "<div id=$cr >";
-              echo "<h4 id=$parts >$Ratings</h4>";
-            //   if ($rating_round <= 0.5 && $rating_round > 0) {
-            //     echo '<i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>';
-            // }
-            // if ($rating_round <= 1 && $rating_round > 0.5) {
-            //     echo '<i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>';
-            // }
-            // if ($rating_round <= 1.5 && $rating_round > 1) {
-            //     echo '<i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>';
-            // }
-            // if ($rating_round <= 2 && $rating_round > 1.5) {
-            //     echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>';
-            // }
-            // if ($rating_round <= 2.5 && $rating_round > 2) {
-            //     echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>';
-            // }
-            // if ($rating_round <= 3 && $rating_round > 2.5) {
-            //     echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>';
-            // }
-            // if ($rating_round <= 3.5 && $rating_round > 3) {
-            //     echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i>';
-            // }
-            // if ($rating_round <= 4 && $rating_round > 3.5) {
-            //     echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>';
-            // }
-            // if ($rating_round <= 4.5 && $rating_round > 4) {
-            //     echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>';
-            // }
-            // if ($rating_round <= 5 && $rating_round > 4.5) {
-            //     echo '<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>';
-            //   }
+            echo "<div id=$cl >";
+            echo "<h4 id=$parts >".$row['hostel_name']."</h4>";
+            echo "<p id=$parts>".$row['hostel_city']."</p>";
+            echo "<p id=$parts>".$row['hostel_address']."</p>";
+            echo "<h5 id=$parts >$Featured</h5>";
+            echo "<p id=$parts>".$row['hostel_feature']."</p>";
+            echo "<h5 id=$parts >$Description</h5>";
+            echo "<p id=$parts>".$row['hostel_description']."</p>";
+            echo "</div>";
+            echo "<div id=$cr >";
+            echo "<h4 id=$parts >$Ratings</h4>";
             echo '<i class="fa fa-star" style="
             padding: 5px;
-        "></i><i class="fa fa-star" style="
+            "></i><i class="fa fa-star" style="
             padding: 5px;
-        "></i><i class="fa fa-star" style="
+            "></i><i class="fa fa-star" style="
             padding: 5px;
-        "></i><i class="fa fa-star" style="
+            "></i><i class="fa fa-star" style="
             padding: 5px;
-        "></i><i class="fa fa-star" style="
+            "></i><i class="fa fa-star" style="
             padding: 5px;
-        "></i>';          
-        echo "<br/>";
+            "></i>';
+            echo "<br/>";
+            
+            echo "<div id=$price>";
+            echo "<span>$Rs</span>";
+            echo "<span>".$row['price_range']."</span>";
+            echo "</div >";
+            
+            echo "<h4 id=$parts >$Contact</h4>";
+            
+            echo "<p id=$parts>".$row['phone_number']."</p>";
+            echo "<p id=$parts>".$row['owner_name']."</p>";
+            echo "<p id=$parts>".$row['hostel_category']."</p>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            
         
-        echo "<div id=$price>";
-        echo "<span>$Rs</span>";
-        echo "<span>".$row['price_range']."</span>";
-        echo "</div >";
-        
-        echo "<h4 id=$parts >$Contact</h4>";
-
-              echo "<p id=$parts>".$row['phone_number']."</p>";
-              echo "<p id=$parts>".$row['owner_name']."</p>";
-              echo "</div>";
-              echo "</div>";
-              echo "</div>";
-              echo "</div>";
-        }
-        
-        
+              
+            }
         ?>
 
 <!DOCTYPE html>
@@ -869,13 +1006,24 @@ if(isset($_GET["hostel_city"])){
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script> -->
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
         </head>
 <body>
        
 
         <style type="text/css">
+        /* #myModal{
+          display: flex !important;
+    padding-right: 16px !important;
+    align-items: center !important;
+        }
+       */
         #con{
           width: 100%;
           display: flex;
@@ -907,6 +1055,18 @@ if(isset($_GET["hostel_city"])){
     border-radius: 10px !important;
 
    }
+         #contentt{
+           width: 100%;
+           margin: 20px auto;
+           border: 1px solid #cbcbcb;
+           height: 210px;
+           background-color: #ededed;
+           display: flex;
+    flex-wrap: nowrap;
+    flex-direction:row !important;
+    border-radius: 10px !important;
+
+   }
    #price{
     display: flex;
     /* justify-content: center; */
@@ -921,12 +1081,22 @@ if(isset($_GET["hostel_city"])){
         #content{
         width:90%;
         }
+        #contentt{
+        width:100%;
+        }
    }
    @media screen and (max-width:667px) { 
      #cl{
       padding-left: 6px !important;
      }
         #content{
+        width: 100%;
+        border: none;
+        height: 140px;
+        border-radius: 10px !important;
+
+        }
+        #contentt{
         width: 100%;
         border: none;
         height: 140px;
@@ -1024,9 +1194,29 @@ if(isset($_GET["hostel_city"])){
    }
   
   
+   #lightbox {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  display: none;
+}
 
+#lightbox.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  padding: 4px;
+  background-color: black;
+  border: 2px solid white;
+}
 
   </style>
   <div>
@@ -1037,6 +1227,9 @@ if(isset($_GET["hostel_city"])){
         <?php
         
         $content="content";
+        $contentt="contentt";
+        $myModal="myModal";
+        $modal_content="modal_content";
         $parts="parts";
         $Featured="Featured";
         $con= "con";
@@ -1045,21 +1238,78 @@ if(isset($_GET["hostel_city"])){
         $Ratings="Ratings";
         $price="price";
         $Contact="Contact: ";
-
+        $close="close";
+        $Description="Description";
         
       $cl="cl";
       $cr="cr";
         while ($row = mysqli_fetch_array($result)) {
-                echo "<div id=$content >";
-                echo "<img id=$parts src='images/".$row['hostel_image']."' >";
+
+
+          echo "<div id=$content >";
+          // echo "<span id="$close">";
+          // echo "&times;";
+          // echo "</span>";
+
+          echo "<img id=$parts class='image' src='images/".$row['hostel_image']."' >";
+          echo "<div id=$con >";
+          echo "<div id=$co >";
+        echo "<div id=$cl >";
+        echo "<h4 id=$parts >".$row['hostel_name']."</h4>";
+        echo "<p id=$parts>".$row['hostel_city']."</p>";
+        echo "<p id=$parts>".$row['hostel_address']."</p>";
+        echo "<h5 id=$parts >$Featured</h5>";
+        echo "<p id=$parts>".$row['hostel_feature']."</p>";
+        echo "</div>";
+        echo "<div id=$cr >";
+        echo "<h4 id=$parts >$Ratings</h4>";
+        echo '<i class="fa fa-star" style="
+        padding: 5px;
+        "></i><i class="fa fa-star" style="
+        padding: 5px;
+        "></i><i class="fa fa-star" style="
+        padding: 5px;
+        "></i><i class="fa fa-star" style="
+        padding: 5px;
+        "></i><i class="fa fa-star" style="
+        padding: 5px;
+        "></i>';
+        echo "<br/>";
+        
+        echo "<div id=$price>";
+        echo "<span>$Rs</span>";
+        echo "<span>".$row['price_range']."</span>";
+        echo "</div >";
+        
+        echo "<h4 id=$parts >$Contact</h4>";
+        
+        echo "<p id=$parts>".$row['phone_number']."</p>";
+        echo "<p id=$parts>".$row['owner_name']."</p>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+
+
+          echo "<div class='modal fade' id=$myModal role='dialog' style='padding-right: 16px;display: flex;align-items: center;justify-content: center;' >";
+          echo "<div class='modal-dialog'>";
+          echo "<div id=$modal_content >";
+                echo "<div id=$contentt >";
+                // echo "<span id="$close">";
+                // echo "&times;";
+                // echo "</span>";
+
+                echo "<img id=$parts class='image' src='images/".$row['hostel_image']."' >";
                 echo "<div id=$con >";
-              echo "<div id=$co >";
+                echo "<div id=$co >";
               echo "<div id=$cl >";
               echo "<h4 id=$parts >".$row['hostel_name']."</h4>";
               echo "<p id=$parts>".$row['hostel_city']."</p>";
               echo "<p id=$parts>".$row['hostel_address']."</p>";
               echo "<h5 id=$parts >$Featured</h5>";
               echo "<p id=$parts>".$row['hostel_feature']."</p>";
+              echo "<h5 id=$parts >$Description</h5>";
+              echo "<p id=$parts>".$row['hostel_description']."</p>";
               echo "</div>";
               echo "<div id=$cr >";
               echo "<h4 id=$parts >$Ratings</h4>";
@@ -1075,29 +1325,101 @@ if(isset($_GET["hostel_city"])){
               padding: 5px;
               "></i>';
               echo "<br/>";
-
+              
               echo "<div id=$price>";
               echo "<span>$Rs</span>";
               echo "<span>".$row['price_range']."</span>";
               echo "</div >";
               
               echo "<h4 id=$parts >$Contact</h4>";
-
-                          echo "<p id=$parts>".$row['phone_number']."</p>";
-                          echo "<p id=$parts>".$row['owner_name']."</p>";
-                          echo "</div>";
-                          echo "</div>";
+              
+              echo "<p id=$parts>".$row['phone_number']."</p>";
+              echo "<p id=$parts>".$row['owner_name']."</p>";
+              echo "<p id=$parts>".$row['hostel_category']."</p>";
               echo "</div>";
               echo "</div>";
-
-                        }
+              echo "</div>";
+              echo "</div>";
+              echo "</div>";
+              echo "</div>";
+              echo "</div>";
+              
+          
+                
+              }
+              
          ?>
 </div>
 </div>
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script>
+//   const lightbox = document.createElement('div')
+// lightbox.id = 'lightbox'
+// document.body.appendChild(lightbox)
 
+// const images = document.querySelectorAll('img')
+// const p = document.querySelectorAll('p')
+// images.forEach(image => {
+//   image.addEventListener('click', e => {
+//     lightbox.classList.add('active')
+//     const img = document.createElement('img')
+//     img.src = image.src
+//     while (lightbox.firstChild) {
+//       lightbox.removeChild(lightbox.firstChild)
+//     }
+//     lightbox.appendChild(img)
+//   })
+// })
+
+// Get the modal
+// var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+// var btn = document.getElement("img");
+
+// // Get the <span> element that closes the modal
+// var span = document.getElementsById("close")[0];
+
+// // When the user clicks the button, open the modal 
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// // When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//   modal.style.display = "none";
+// }
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+$(document).ready(function(){
+  $(".image").click(function(){
+    $("#myModal").modal();
+  });
+});
+// ppp.forEach(pp => {
+//   pp.addEventListener('click', e => {
+//     lightbox.classList.add('active')
+//     const p = document.createElement('p')
+//     p.src = pp.src
+//     while (lightbox.firstChild) {
+//       lightbox.removeChild(lightbox.firstChild)
+//     }
+//     lightbox.appendChild(p)
+//   })
+// })
+
+lightbox.addEventListener('click', e => {
+  if (e.target !== e.currentTarget) return
+  lightbox.classList.remove('active')
+})
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 

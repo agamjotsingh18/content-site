@@ -5,15 +5,16 @@ import "./hostels.css"
 function HostelsRegister() {
     return (
         <>
-    
     <div className="cont">
+    <div className="contt">
+  
 
 <form action="http://localhost/hostels/index.php" method="post"  enctype="multipart/form-data" className="form">
 <span>
 Enter the Hostel Image:
 </span>
 &nbsp;&nbsp;
-<input name="hostel_image" id="image" accept="image/JPEG" type="file"/><br /><br />
+<input name="hostel_image" id="image" accept="image/JPEG" type="file"/>
 <span>
 Enter the Hostel Name:
 </span>
@@ -49,11 +50,28 @@ Enter the Hostel Features:
 </span>
 &nbsp;&nbsp;
 <input type="text" name="hostel_feature" /><br />
+<span>
+Enter the Hostel Desciption:
+</span>
+&nbsp;&nbsp;
+<input type="text" name="hostel_description" /><br />
+<span>
+Enter the Hostel Category:
+</span>
+&nbsp;&nbsp;
+{/* <input type="text" name="hostel_category" /><br /> */}
+<select type="text" name="hostel_category">
+<option value="" selected></option>
+  <option value="travel">Travel</option>
+  <option value="student">Student</option>
+</select>
 <br></br>
-<input type="submit" value="Submit" name="submit" id="submit" />
+<button type="submit" value="Submit" name="submit" >Submit</button>
 </form>
-{/* <HostelDashboard /> */}
+
     </div>
+    </div>
+
 
         </>
     )

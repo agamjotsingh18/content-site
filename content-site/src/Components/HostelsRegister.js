@@ -7,7 +7,7 @@ function HostelsRegister() {
         <>
     <div className="cont">
     <div className="contt">
-  
+    <p id="login">Add a New Hostel</p> 
 
 <form action="http://localhost/hostels/index.php" method="post"  enctype="multipart/form-data" className="form">
 <span>

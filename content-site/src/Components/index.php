@@ -21,11 +21,9 @@ if(isset($_GET['logout'])){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css">
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 <link href="bootstrap.min.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
 
-<!-- <link rel="stylesheet" href="mega-menu.css"> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/5.0.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.min.js"></script>
 
@@ -292,6 +290,11 @@ border-color: #000000;
     border-radius: 24px;
     margin: 5px;
    }
+  #selectivess{
+    background-color: white;
+    border-radius: 24px;
+    margin: 5px;
+   }
    #sort{
     margin: 2px -110px 0 !important;
    }
@@ -322,6 +325,20 @@ border-color: #000000;
     padding-right: 12px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+
+
+  }
+  #city-linkk{
+    
+    font-size: 20px;
+    background-color: white;
+    color: grey;
+    margin: 7px;
+    padding-top: 9px;
+    padding-bottom: 11px;
+    padding-left: 15px;
+    padding-right: 12px;
+    border-radius: 20px;
 
 
   }
@@ -362,6 +379,10 @@ border-color: #000000;
     #selectives{
       padding: 20px 0 !important;
     margin: 0px 120px!important;
+    }
+    #selectivess{
+      padding: 20px 0 !important;
+    margin: 0px 22px!important;
     }
     /* #drop{
       padding: 20px 0 !important;
@@ -432,6 +453,30 @@ border-color: #000000;
     display: inline-block;
     margin-left: 40px;
     }
+    #city-linkk{
+      /* font-size: 25px;
+    background-color: white;
+    color: grey;
+    margin: 17px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 15px;
+    padding-right: 12px;
+    border-radius: 55px; */
+
+
+    font-size: 20px;
+    background-color: white;
+    color: grey;
+    margin: 7px;
+    padding-top: 9px;
+    padding-bottom: 11px;
+    padding-left: 15px;
+    padding-right: 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-left: 40px;
+    }
     .city-drop-link-group{
       webkit-column-count: 3;
     -moz-column-count: 3;
@@ -476,9 +521,7 @@ border-color: #000000;
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" id="togglew" data-toggle="collapse" data-target=".navbar-collapse">
-        <!-- <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> -->
+    
         <i class="fa fa-sort-down" style="
             font-size: 35px;
             margin-top: -15px;
@@ -492,245 +535,196 @@ border-color: #000000;
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
     
-        <li class="dropdown menu-large" style="
-    padding-top: 6px;
-">
-        <!-- <input readonly id="city-link" type="text" data-toggle="dropdown" value="Select a city" class="dropdown-toggle"><b class="caret" id="carett"></b> -->
-          <a readonly href="#"  class="dropdown-toggle" id="city-link" data-toggle="dropdown" value="Select a city">Select a city <b class="caret" id="carett"></b></a>          
-          <!-- <ul class="dropdown-menu megamenu row">
-            <li class="col-sm-3"> -->
-              <!-- <select class="dropdown-toggle" id="city-link" data-toggle="dropdown" onchange="location = this.value;">
-              <option value="http://localhost/hostels/index.php?hostel_city=agra">Agra</option>
-              <option value="Durgapur" ><a href="http://localhost/hostels/index.php?hostel_city=Durgapur">Durgapur</a></option>
-              <option value="Kochi"><a href="http://localhost/hostels/index.php?hostel_city=Kochi">Kochi</a></option>
-          </select> -->
+        <li class="dropdown menu-large" style="padding-top: 6px;">          
+        <a readonly href="#"  class="dropdown-toggle" id="city-link" data-toggle="dropdown" value="Select a city">Select a city <b class="caret" id="carett"></b></a>          
+     
             <ul class="dropdown-menu megamenu city-drop-link-group" id="selectives">
 
-<li> <a href="http://localhost/hostels/index.php?hostel_city=agra" class="aust" >Agra</a> 
-</li>
-<li>                    
-<a href="http://localhost/hostels/index.php?hostel_city=Durgapur" class="aust">Durgapur</a>
-</li>
-<li>       
-<a href="http://localhost/hostels/index.php?hostel_city=Kochi" class="aust">Kochi</a>
-</li>
-<li>                
-<a href="http://localhost/hostels/index.php?hostel_city=Palghar" class="aust">Palghar</a>
-</li>
-<li>         
-<a href="http://localhost/hostels/index.php?hostel_city=Trichy" class="aust">Trichy</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Allahabad" class="aust">Allahabad</a>
-</li>
-<li>                    
-<a href="http://localhost/hostels/index.php?hostel_city=Goa" class="aust">Goa</a>
-</li>
-<li>       
-<a href="http://localhost/hostels/index.php?hostel_city=Kottayam" class="aust">Kottayam</a>
-</li>
-<li>                    
-<a href="http://localhost/hostels/index.php?hostel_city=Patna" class="aust">Patna</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Udaipur" class="aust">Udaipur</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Aurangabad" class="aust">Aurangabad</a>      
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Gorakhpur" class="aust">Gorakhpur</a>
-</li> 
-<li>                   
-<a href="http://localhost/hostels/index.php?hostel_city=Kozhikode" class="aust">Kozhikode</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Rajahmundry" class="aust">Rajahmundry</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Udupi" class="aust">Udupi</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Bhiwadi" class="aust">Bhiwadi</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Guntur" class="aust">Guntur</a>
-</li>
+  <li> <a href="http://localhost/hostels/index.php?hostel_city=agra" class="aust" >Agra</a> 
+  </li>
+  <li>                    
+  <a href="http://localhost/hostels/index.php?hostel_city=Durgapur" class="aust">Durgapur</a>
+  </li>
+  <li>       
+  <a href="http://localhost/hostels/index.php?hostel_city=Kochi" class="aust">Kochi</a>
+  </li>
+  <li>                
+  <a href="http://localhost/hostels/index.php?hostel_city=Palghar" class="aust">Palghar</a>
+  </li>
+  <li>         
+  <a href="http://localhost/hostels/index.php?hostel_city=Trichy" class="aust">Trichy</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Allahabad" class="aust">Allahabad</a>
+  </li>
+  <li>                    
+  <a href="http://localhost/hostels/index.php?hostel_city=Goa" class="aust">Goa</a>
+  </li>
+  <li>       
+  <a href="http://localhost/hostels/index.php?hostel_city=Kottayam" class="aust">Kottayam</a>
+  </li>
+  <li>                    
+  <a href="http://localhost/hostels/index.php?hostel_city=Patna" class="aust">Patna</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Udaipur" class="aust">Udaipur</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Aurangabad" class="aust">Aurangabad</a>      
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Gorakhpur" class="aust">Gorakhpur</a>
+  </li> 
+  <li>                   
+  <a href="http://localhost/hostels/index.php?hostel_city=Kozhikode" class="aust">Kozhikode</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Rajahmundry" class="aust">Rajahmundry</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Udupi" class="aust">Udupi</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Bhiwadi" class="aust">Bhiwadi</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Guntur" class="aust">Guntur</a>
+  </li>
 
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Lucknow" class="aust">Lucknow</a>
-</li>
-<li>                 
-<a href="http://localhost/hostels/index.php?hostel_city=Ranchi" class="aust">Ranchi</a>
-</li>   
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Vadodara" class="aust">Vadodara</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Bhopal" class="aust">Bhopal</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Guwahati" class="aust">Guwahati</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Madurai" class="aust">Madurai</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Raipur" class="aust">Raipur</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Vapi" class="aust">Vapi</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Bhubaneswar" class="aust">Bhubaneswar</a>
-</li>  
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Haridwar" class="aust">Haridwar</a>
-</li> 
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Mangalore" class="aust">Mangalore</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Salem" class="aust">Salem</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Varanasi" class="aust">Varanasi</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Bokaro Steel City" class="aust">Bokaro Steel City</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Indore" class="aust">Indore</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Sonipat" class="aust">Sonipat</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Vijayawada" class="aust">Vijayawada</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Chandigarh" class="aust">Chandigarh</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Jaipur" class="aust">Jaipur</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Mysore">Mysore</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Surat" class="aust">Surat</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Visakhapatnam" class="aust">Visakhapatnam</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Coimbatore" class="aust">Coimbatore</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Jamshedpur" class="aust">Jamshedpur</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Nagpur" class="aust">Nagpur</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Thrissur" class="aust">Thrissur</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Ahmadnagar" class="aust">Ahmadnagar</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Dehradun" class="aust">Dehradun</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Jodhpur" class="aust">Jodhpur</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Nashik" class="aust">Nashik</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Tirupati" class="aust">Tirupati</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Kanpur" class="aust">Kanpur</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Navsari" class="aust">Navsari</a>
-</li>
-<li>
-<a href="http://localhost/hostels/index.php?hostel_city=Trivandrum" class="aust">Trivandrum</a>
-</li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Lucknow" class="aust">Lucknow</a>
+  </li>
+  <li>                 
+  <a href="http://localhost/hostels/index.php?hostel_city=Ranchi" class="aust">Ranchi</a>
+  </li>   
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Vadodara" class="aust">Vadodara</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Bhopal" class="aust">Bhopal</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Guwahati" class="aust">Guwahati</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Madurai" class="aust">Madurai</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Raipur" class="aust">Raipur</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Vapi" class="aust">Vapi</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Bhubaneswar" class="aust">Bhubaneswar</a>
+  </li>  
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Haridwar" class="aust">Haridwar</a>
+  </li> 
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Mangalore" class="aust">Mangalore</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Salem" class="aust">Salem</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Varanasi" class="aust">Varanasi</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Bokaro Steel City" class="aust">Bokaro Steel City</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Indore" class="aust">Indore</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Sonipat" class="aust">Sonipat</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Vijayawada" class="aust">Vijayawada</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Chandigarh" class="aust">Chandigarh</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Jaipur" class="aust">Jaipur</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Mysore">Mysore</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Surat" class="aust">Surat</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Visakhapatnam" class="aust">Visakhapatnam</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Coimbatore" class="aust">Coimbatore</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Jamshedpur" class="aust">Jamshedpur</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Nagpur" class="aust">Nagpur</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Thrissur" class="aust">Thrissur</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Ahmadnagar" class="aust">Ahmadnagar</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Dehradun" class="aust">Dehradun</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Jodhpur" class="aust">Jodhpur</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Nashik" class="aust">Nashik</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Tirupati" class="aust">Tirupati</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Kanpur" class="aust">Kanpur</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Navsari" class="aust">Navsari</a>
+  </li>
+  <li>
+  <a href="http://localhost/hostels/index.php?hostel_city=Trivandrum" class="aust">Trivandrum</a>
+  </li>
 
-</ul> 
-<!-- </li>
-</ul> -->
-</li>
-</ul>
-<li className="nav-item" id="know-more" >
-  <a className="nav-link" id="aknow" href="login.php"> Login</a>
-  <span>&nbsp;|&nbsp;</span>
-  <a className="nav-link" id="aknow" href="register.php"> Sign Up </a>
-</li>
+  </ul> 
+  </li>
+  </ul>
+  <ul class="nav navbar-nav" style="margin-left: 10px;">
+  <li class="dropdown menu" style="padding-top: 6px;">          
+          <a readonly href="#"  class="dropdown-toggle" id="city-link" data-toggle="dropdown" value="Select Category">Select Category <b class="caret" id="carett"></b></a>          
+      
+              <ul  class="dropdown-menu megamenu " id="selectivess">
+
+  <li> <a href="http://localhost/hostels/index.php?hostel_category=travel" class="aust" >Travel Hostels</a> 
+  </li>
+  <li> <a href="http://localhost/hostels/index.php?hostel_category=student" class="aust" >Student Hostels</a> 
+  </li>
+  </ul>
+  </li>
+  </ul>
+
+
+
+  <li className="nav-item" id="know-more" >
+    <a className="nav-link" id="aknow" href="login.php"> Login</a>
+    <span>&nbsp;|&nbsp;</span>
+    <a className="nav-link" id="aknow" href="register.php"> Sign Up </a>
+  </li>
     </div>
   </div>
 </div>
 
-
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-secondary text-dark">
- <div class="container-fluid">
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="main_nav">
-	<ul class="navbar-nav">
-		<li class="nav-item active"> <a class="nav-link" href="#">Home </a> </li>
-	
-		<li class="nav-item dropdown">
-		   <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">  Hover me  </a>
-		    <ul class="dropdown-menu">
-			  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
-			  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
-			  <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
-		    </ul>
-		</li>
-		<li class="nav-item dropdown">
-		   <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">  Hover me  </a>
-		    <ul class="dropdown-menu">
-			  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
-			  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
-			  <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
-		    </ul>
-		</li>
-		<li class="nav-item dropdown">
-		   <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">  Hover me  </a>
-		    <ul class="dropdown-menu">
-			  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
-			  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
-			  <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
-		    </ul>
-		</li>
-		<li class="nav-item dropdown">
-		   <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">  Hover me  </a>
-		    <ul class="dropdown-menu">
-			  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
-			  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
-			  <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
-		    </ul>
-		</li>
-	</ul>
-  </div> 
- </div> 
-</nav> -->
 <div class="navbar" style=" margin-left:10px;
     margin-right: 10px;">
 	    	<div class="container-fluid">
-	    		<!-- <div class="navbar-header">
-          <button type="button" id="togglew" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapibleMenu" style="border: 1px solid black;">
-        <span class="icon-bar" style="border: 1px solid black;"></span>
-        <span class="icon-bar"style="border: 1px solid black;"></span>
-        <span class="icon-bar" style="border: 1px solid black;"></span>
-      </button>
-	    		</div> -->
-	    		<!-- <div class="collapse navbar-collapse" id="collapibleMenu"> -->
 	    			<ul class="nav" style="    display: flex;
     flex-direction: row;
     justify-content: center;">
@@ -849,11 +843,12 @@ if (isset($_POST['submit'])) {
         $price_range = mysqli_real_escape_string($db, $_POST['price_range']);
         $hostel_feature = mysqli_real_escape_string($db, $_POST['hostel_feature']);
         $hostel_description = mysqli_real_escape_string($db, $_POST['hostel_description']);
+        $hostel_category = mysqli_real_escape_string($db, $_POST['hostel_category']);
 
         // image file directory
         $target = "images/".basename($image);
 
-        $sql = "INSERT INTO hostel (hostel_image, hostel_name, hostel_city, hostel_address, owner_name, phone_number, price_range, hostel_feature, hostel_description ) VALUES ('$image', '$hostel_name', '$hostel_city', '$hostel_address', '$owner_name', '$phone_number', '$price_range', '$hostel_feature', '$hostel_description')";
+        $sql = "INSERT INTO hostel (hostel_image, hostel_name, hostel_city, hostel_address, owner_name, phone_number, price_range, hostel_feature, hostel_description, hostel_category ) VALUES ('$image', '$hostel_name', '$hostel_city', '$hostel_address', '$owner_name', '$phone_number', '$price_range', '$hostel_feature', '$hostel_description', '$hostel_category')";
         // execute query
         mysqli_query($db, $sql);
 
@@ -871,6 +866,10 @@ if(isset($_GET["hostel_city"])){
         $result = mysqli_query($db, "SELECT * FROM hostel where hostel_city = '".$hostel_city."'");
       }
         
+      if(isset($_GET["hostel_category"])){
+        $hostel_category = $_GET['hostel_category'];
+        $result = mysqli_query($db, "SELECT * FROM hostel where hostel_category = '".$hostel_category."'");
+      }
    
       $content="content";
       $contentt="contentt";
@@ -880,7 +879,10 @@ if(isset($_GET["hostel_city"])){
       $Featured="Featured";
       $con= "con";
       $co="co";
+      $big="big";
+      $small="small";
       $Rs="Rs.";
+      $Category="Category";
       $Ratings="Ratings";
       $price="price";
       $Contact="Contact: ";
@@ -895,6 +897,7 @@ if(isset($_GET["hostel_city"])){
         // echo "</span>";
 
         echo "<img id=$parts class='image' src='images/".$row['hostel_image']."' >";
+        
         echo "<div id=$con >";
         echo "<div id=$co >";
       echo "<div id=$cl >";
@@ -903,6 +906,12 @@ if(isset($_GET["hostel_city"])){
       echo "<p id=$parts>".$row['hostel_address']."</p>";
       echo "<h5 id=$parts >$Featured</h5>";
       echo "<p id=$parts>".$row['hostel_feature']."</p>";
+      echo "<div id=$price class='cat'>";
+      echo "<span id=$parts>$Category</span>";
+      echo "&nbsp";
+      echo "<span>".$row['hostel_category']."</span>";
+      echo "</div >"; 
+      
       echo "</div>";
       echo "<div id=$cr >";
       echo "<h4 id=$parts >$Ratings</h4>";
@@ -928,7 +937,12 @@ if(isset($_GET["hostel_city"])){
       
       echo "<p id=$parts>".$row['phone_number']."</p>";
       echo "<p id=$parts>".$row['owner_name']."</p>";
-      echo "</div>";
+      // echo "<div id=$parts>";
+      // echo "<span>$Category</span>";
+      // echo "&nbsp";
+      // echo "<span>".$row['hostel_category']."</span>";
+      // echo "</div >";     
+       echo "</div>";
       echo "</div>";
       echo "</div>";
       echo "</div>";
@@ -942,7 +956,15 @@ if(isset($_GET["hostel_city"])){
               // echo "&times;";
               // echo "</span>";
 
-              echo "<img id=$parts class='image' src='images/".$row['hostel_image']."' >";
+              echo "<div id=$big>";
+              echo "<img id=$parts class='imageee' src='images/".$row['hostel_image']."' >";
+              
+              echo "<div id=$small>";
+              echo "<img id=$parts class='imagee' src='images/".$row['hostel_image']."' >";
+              echo "<img id=$parts class='imagee' src='images/".$row['hostel_image']."' >";
+              echo "<img id=$parts class='imagee' src='images/".$row['hostel_image']."' >";
+              echo "</div>";
+              echo "</div>";
               echo "<div id=$con >";
               echo "<div id=$co >";
             echo "<div id=$cl >";
@@ -978,7 +1000,6 @@ if(isset($_GET["hostel_city"])){
             
             echo "<p id=$parts>".$row['phone_number']."</p>";
             echo "<p id=$parts>".$row['owner_name']."</p>";
-            echo "<p id=$parts>".$row['hostel_category']."</p>";
             echo "</div>";
             echo "</div>";
             echo "</div>";
@@ -990,6 +1011,7 @@ if(isset($_GET["hostel_city"])){
         
               
             }
+
         ?>
 
 <!DOCTYPE html>
@@ -1024,11 +1046,45 @@ if(isset($_GET["hostel_city"])){
     align-items: center !important;
         }
        */
+        .cat{
+          float: left !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    margin: 1px 0 !important;
+        }
+       .modal{
+        /* display: block; */
+    margin: auto !important;
+    height: fit-content !important;
+       }
+       .modal-dialog{
+         width:60% !important;
+       }
+.imagee{
+  margin: 2px !important;
+    width: 100px !important;
+    height: auto !important;
+}
+.imageee{
+  margin: 4px !important;
+    width: 300px !important;
+    height: auto !important;
+}
+       #big{
+         display: grid !important;
+         padding: 5px !important;
+
+       }
+       #small{
+         display: flex !important;
+       }
         #con{
           width: 100%;
           display: flex;
           flex-direction: row-reverse;
         }
+       
         #co{
           width: 100%;
           display: block;
@@ -1059,7 +1115,7 @@ if(isset($_GET["hostel_city"])){
            width: 100%;
            margin: 20px auto;
            border: 1px solid #cbcbcb;
-           height: 210px;
+           height: 310px;
            background-color: #ededed;
            display: flex;
     flex-wrap: nowrap;
@@ -1077,42 +1133,93 @@ if(isset($_GET["hostel_city"])){
    .fa fa-star{
      padding: 5px !important;
    }
-   @media screen and (max-width:1000px) { 
+   @media screen and (max-width:1052px) { 
+    .modal-dialog{
+        
+
+         display: flex !important;
+    justify-content: center;
+    width: 70% !important;
+    margin: auto !important;
+       }
         #content{
         width:90%;
         }
         #contentt{
         width:100%;
+        height: 215px;
+
+        }
+        .imagee{
+    width: 55px !important;
+    height: 60px !important;
+
+}
+.imageee{
+  width: 170px !important;
+    height: 130px !important;
+}
+i{
+     padding:2px !important;
+   }
+   #con{
+          padding: 5px !important;
         }
    }
-   @media screen and (max-width:667px) { 
+   @media screen and (max-width:698px) { 
+    #big{
+         padding: 11px 0 7px 7px !important;
+       }
+    #con{
+          padding: 5px !important;
+        }
+    .modal-dialog{
+        
+
+        display: flex !important;
+   justify-content: center;
+   width: 95% !important;
+   margin: auto !important;
+      }
      #cl{
       padding-left: 6px !important;
      }
+
+     .imagee{
+    width: 58px !important;
+    height: 65px !important;
+display: none !important;
+visibility: hidden !important;
+}
+.imageee{
+  width: 150px !important;
+    height: 170px !important;
+}
         #content{
         width: 100%;
         border: none;
-        height: 140px;
+        height: 155px;
         border-radius: 10px !important;
 
         }
         #contentt{
         width: 100%;
+
         border: none;
-        height: 140px;
+           height: 200px;
         border-radius: 10px !important;
 
         }
         img{
            width: 140px !important;
-           margin: 0px !important;
+           margin: 7px !important;
            height: 140px !important;
            padding: 0 0 !important;
            border-radius: 10px !important;
    }
 
    i{
-     padding:2px !important;
+     padding:1px !important;
    }
    h4,h5{
     margin: 2px 0 !important;
@@ -1122,6 +1229,12 @@ if(isset($_GET["hostel_city"])){
    #price{
     margin-bottom: 0 !important;
   }
+  #parts{
+        display: flex;
+        flex-direction: row-reverse;
+    // padding-right: 25px;
+    font-size:13px;
+   }
   }
    form{
            width: 50%;
@@ -1181,6 +1294,7 @@ if(isset($_GET["hostel_city"])){
         display: flex;
         flex-direction: row-reverse;
     // padding-right: 25px;
+    /* font-size:13px; */
    }
    .App-header {
   background-color: #282c34;
@@ -1194,29 +1308,7 @@ if(isset($_GET["hostel_city"])){
    }
   
   
-   #lightbox {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .8);
-  display: none;
-}
-
-#lightbox.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  padding: 4px;
-  background-color: black;
-  border: 2px solid white;
-}
+ 
 
   </style>
   <div>
@@ -1285,6 +1377,8 @@ if(isset($_GET["hostel_city"])){
         
         echo "<p id=$parts>".$row['phone_number']."</p>";
         echo "<p id=$parts>".$row['owner_name']."</p>";
+        echo "<p id=$parts>".$row['hostel_category']."</p>";
+
         echo "</div>";
         echo "</div>";
         echo "</div>";
@@ -1309,7 +1403,7 @@ if(isset($_GET["hostel_city"])){
               echo "<h5 id=$parts >$Featured</h5>";
               echo "<p id=$parts>".$row['hostel_feature']."</p>";
               echo "<h5 id=$parts >$Description</h5>";
-              echo "<p id=$parts>".$row['hostel_description']."</p>";
+              echo "<p >".$row['hostel_description']."</p>";
               echo "</div>";
               echo "<div id=$cr >";
               echo "<h4 id=$parts >$Ratings</h4>";
@@ -1335,7 +1429,6 @@ if(isset($_GET["hostel_city"])){
               
               echo "<p id=$parts>".$row['phone_number']."</p>";
               echo "<p id=$parts>".$row['owner_name']."</p>";
-              echo "<p id=$parts>".$row['hostel_category']."</p>";
               echo "</div>";
               echo "</div>";
               echo "</div>";

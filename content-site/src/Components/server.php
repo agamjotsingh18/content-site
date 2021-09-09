@@ -4,6 +4,7 @@ session_start();
 $username ="";
 $email="";
 
+
 $errors= array();
 
 $db = mysqli_connect("localhost", "root", "", "hostels");
@@ -34,18 +35,18 @@ if($user){
 }
 
 if(count($errors) == 0){
-    $password= md5($password);
+    // $password= md5($password);
     $query = "INSERT INTO register (username, email, phone_number, password ) VALUES ('$username', '$email','$phone_number', '$password')";
 
     mysqli_query($db, $query);
     $_SESSION['username']= $username;
     $_SESSION['success']= "You are now logged in";
 
-    header('location: index.php');
+    header('location: login.php');
 }
 }
 
-$db = mysqli_connect("localhost", "root", "", "hostels");
+// $db = mysqli_connect("localhost", "root", "", "hostels");
 
 
 if (isset($_POST['login_user'])) {
@@ -61,11 +62,11 @@ if (isset($_POST['login_user'])) {
     if(empty($password)) {array_push($errors, "Password is required");}
 
     if(count($errors) == 0){
-        $password= md5($password);
-        $query = "SELECT * FROM register WHERE username =='$username' AND password=='$password'";
+        // $password= md5($password);
+        $query = "SELECT * FROM register WHERE username ='$username' AND password='$password'";
         $results= mysqli_query($db, $query);
     
-        if(mysqli_num_rows($results)>){
+        if(mysqli_num_rows($results)== 1){
             $_SESSION['username']= $username;
             $_SESSION['success']= "You are now logged in";
             header('location: index.php');

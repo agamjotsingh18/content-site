@@ -1,16 +1,8 @@
 
 <?php
 session_start();
-
-// if(isset($_SESSION['username'])){
-//   // $_SESSION['msg']= "Go! mand Login first";
-//   header("location: login.php");
-
-// }
-
 if(isset($_GET['logout'])){
   session_destroy();
-  // unset($_SESSION['username']);
   header("location: .php");
 }
 ?>
@@ -90,31 +82,6 @@ if (window.innerWidth > 992) {
 }
 // end if innerWidth
 }); 
-
-// $(function(){
-//     $('.dropdown').hover(function() {
-//         $(this).addClass('open');
-//     },
-//     function() {
-//         $(this).removeClass('open');
-//     });
-// });
-
-//           $(document).ready(function(){
-//   $("#city-link").click(function(){
-//     // $("#selectives");
-//     // $("input").css('borderRadius', '2px 2px 0px 0px');
-//   });
-
-
-//   $(".aust").click(function(){
-//     var das = $(this).html();
-//     $("#city-link").val(das);
-//     // $("#selectives");
-//     // $("input").css('borderRadius', '2px');
-//   });
-
-// });
   </script>
 </head>
 <style>
@@ -384,11 +351,6 @@ border-color: #000000;
       padding: 20px 0 !important;
     margin: 0px 22px!important;
     }
-    /* #drop{
-      padding: 20px 0 !important;
-    margin: 0px 120px!important;
-   
-    } */
     .all{
       width: 100%;
     }
@@ -431,16 +393,6 @@ border-color: #000000;
   }
 
     #city-link{
-      /* font-size: 25px;
-    background-color: white;
-    color: grey;
-    margin: 17px;
-    padding-top: 10px;
-    padding-bottom:10px;
-    padding-left: 15px;
-    padding-right: 12px;
-    border-radius: 55px; */
-
 
     font-size: 20px;
     background-color: white;
@@ -454,17 +406,6 @@ border-color: #000000;
     margin-left: 40px;
     }
     #city-linkk{
-      /* font-size: 25px;
-    background-color: white;
-    color: grey;
-    margin: 17px;
-    padding-top: 10px;
-    padding-bottom:10px;
-    padding-left: 15px;
-    padding-right: 12px;
-    border-radius: 55px; */
-
-
     font-size: 20px;
     background-color: white;
     color: grey;
@@ -804,23 +745,6 @@ border-color: #000000;
                 <a href="index.php?logout='1'">Logout</a>
             </button>
             <?php endif ?>
-         
-            <!-- <script src="//code.jquery.com/jquery.min.js"></script>
-2
-<script src="js/main.js"></script> -->
-
-	<!-- </div> -->
-<script>
-//         $(document).ready(function() {
-//   jQuery(document).ready(function(){
-//     $(".dropdown").hover(
-//       function() { $('.dropdown-menu', this).stop().fadeIn("fast");
-//         },
-//       function() { $('.dropdown-menu', this).stop().fadeOut("fast");
-//     });
-//   });
-// }
-        </script>
 <?php
 
 
@@ -936,12 +860,7 @@ if(isset($_GET["hostel_city"])){
       echo "<h4 id=$parts >$Contact</h4>";
       
       echo "<p id=$parts>".$row['phone_number']."</p>";
-      echo "<p id=$parts>".$row['owner_name']."</p>";
-      // echo "<div id=$parts>";
-      // echo "<span>$Category</span>";
-      // echo "&nbsp";
-      // echo "<span>".$row['hostel_category']."</span>";
-      // echo "</div >";     
+      echo "<p id=$parts>".$row['owner_name']."</p>";    
        echo "</div>";
       echo "</div>";
       echo "</div>";
@@ -952,13 +871,8 @@ if(isset($_GET["hostel_city"])){
         echo "<div class='modal-dialog'>";
         echo "<div id=$modal_content >";
               echo "<div id=$contentt >";
-              // echo "<span id="$close">";
-              // echo "&times;";
-              // echo "</span>";
-
               echo "<div id=$big>";
               echo "<img id=$parts class='imageee' src='images/".$row['hostel_image']."' >";
-              
               echo "<div id=$small>";
               echo "<img id=$parts class='imagee' src='images/".$row['hostel_image']."' >";
               echo "<img id=$parts class='imagee' src='images/".$row['hostel_image']."' >";
@@ -1021,31 +935,19 @@ if(isset($_GET["hostel_city"])){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>All Registered Hostels</title>
-        <!-- <link rel="stylesheet" href="navbar.css"> -->
-       
-        <!-- <link href="/Components/navbar.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="css/bootstrap.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script> -->
+  
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
         </head>
 <body>
        
 
         <style type="text/css">
-        /* #myModal{
-          display: flex !important;
-    padding-right: 16px !important;
-    align-items: center !important;
-        }
-       */
+      
         .cat{
           float: left !important;
     width: 100% !important;
@@ -1448,65 +1350,11 @@ visibility: hidden !important;
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script>
-//   const lightbox = document.createElement('div')
-// lightbox.id = 'lightbox'
-// document.body.appendChild(lightbox)
-
-// const images = document.querySelectorAll('img')
-// const p = document.querySelectorAll('p')
-// images.forEach(image => {
-//   image.addEventListener('click', e => {
-//     lightbox.classList.add('active')
-//     const img = document.createElement('img')
-//     img.src = image.src
-//     while (lightbox.firstChild) {
-//       lightbox.removeChild(lightbox.firstChild)
-//     }
-//     lightbox.appendChild(img)
-//   })
-// })
-
-// Get the modal
-// var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-// var btn = document.getElement("img");
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsById("close")[0];
-
-// // When the user clicks the button, open the modal 
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
 $(document).ready(function(){
   $(".image").click(function(){
     $("#myModal").modal();
   });
 });
-// ppp.forEach(pp => {
-//   pp.addEventListener('click', e => {
-//     lightbox.classList.add('active')
-//     const p = document.createElement('p')
-//     p.src = pp.src
-//     while (lightbox.firstChild) {
-//       lightbox.removeChild(lightbox.firstChild)
-//     }
-//     lightbox.appendChild(p)
-//   })
-// })
 
 lightbox.addEventListener('click', e => {
   if (e.target !== e.currentTarget) return
